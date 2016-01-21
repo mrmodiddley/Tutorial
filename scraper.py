@@ -25,11 +25,18 @@ tds = root.cssselect('td')
 #
 # A dictionary is a series of pairs of data e.g. Age: 25 and they are in curly brackets e.g. {Name: Mo; Height: 178}
 #
+#for td in tds:
+#  record = {"cell" : td.text}
+#  print record
+#  scraperwiki.sqlite.save(["cell"], record)
+# The above contained null records which caused it a problem but we can change it to allow for null values as below
+indexno = 0
 for td in tds:
-  record = {"cell" : td.text}
+  indexno = indexno + 1
+  record = {"cell" : td.text, "index" : indexno}
   print record
-  scraperwiki.sqlite.save(["cell"], record)
-  # # Write out to the sqlite database using scraperwiki library
+  scraperwiki.sqlite.save(["index"], record)
+  # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
 # # An arbitrary query against the database
