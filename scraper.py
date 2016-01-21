@@ -1,17 +1,22 @@
 # 21st AM
+# import brings in a library
 import scraperwiki
 import lxml.html
-# import brings in a library
 #
-# # Read in a page
 html = scraperwiki.scrape("http://uk.soccerway.com/teams/netherlands/fortuna-sittard/")
+# if you didn't 'print html' you could still get the results you just wouldn't be able to see it.  We are using scraperwiki library for the function scrape and performing it on the soccerway webpage
 print html
-# if you didn't 'print html' you could still get the results you just wouldn't be able to see it
 #
-# # Find something on the page using css selectors
+# The line below is us using the function fromstring for the lxml library on our variable html.  It turns it from html into a language that cssselect can use. [# Find something on the page using css selectors]
 root = lxml.html.fromstring(html)
-# root.cssselect("div[align='left']") - original text but replaced by us with the line below 
+# root.cssselect("div[align='left']") - original text but replaced by us with the line below
+# the line below is us using cssselect on variable root to grab the table cell i.e. 'td' and put in variable 'tds'
 tds = root.cssselect('td')
+#
+#
+#
+#
+#
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
