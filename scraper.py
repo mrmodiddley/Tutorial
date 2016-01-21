@@ -4,8 +4,7 @@ import scraperwiki
 import lxml.html
 #
 html = scraperwiki.scrape("http://uk.soccerway.com/teams/netherlands/fortuna-sittard/")
-# if you didn't 'print html' you could still get the results you just wouldn't be able to see it.  We are using scraperwiki library for the function scrape and performing it on the soccerway webpage
-print html
+# if you don't 'print html' you could still get the results you just wouldn't be able to see it.  We are using scraperwiki library for the function scrape and performing it on the soccerway webpage
 #
 # The line below is us using the function fromstring for the lxml library on our variable html.  It turns it from html into a language that cssselect can use. [# Find something on the page using css selectors]
 root = lxml.html.fromstring(html)
