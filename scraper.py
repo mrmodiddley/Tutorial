@@ -1,11 +1,14 @@
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
 
+# 21st AM
 import scraperwiki
 import lxml.html
+# import brings in a library
 #
 # # Read in a page
-# html = scraperwiki.scrape("http://foo.com")
+html = scraperwiki.scrape("http://uk.soccerway.com/teams/netherlands/fortuna-sittard/")
+print html
 #
 # # Find something on the page using css selectors
 # root = lxml.html.fromstring(html)
