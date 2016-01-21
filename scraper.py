@@ -12,7 +12,10 @@ root = lxml.html.fromstring(html)
 # the line below is us using cssselect on variable root to grab the table cell i.e. 'td' and put in variable 'tds'
 tds = root.cssselect('td')
 #
-#
+#Just as the function fromstring changes it to xml so the lxml library can read it we now need to change it back to something that we cna read
+for td in tds:
+  print lxml.html.tostring(td)
+  print td.text
 #
 #
 #
